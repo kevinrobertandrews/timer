@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { data } from './data.json';
+import { data } from './data';
 import { CommonModule } from '@angular/common';
-import './models/Client.model';
-import './value-objects/Day.vo'
 
 @Component({
   selector: 'app-root',

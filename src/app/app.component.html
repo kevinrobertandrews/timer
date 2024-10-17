@@ -2,6 +2,11 @@
 
   Timer App
 
+  Associations --
+
+  a Client has zero to many Task, and one Task has one Client 
+
+
   Domain Models --
 
   Client
@@ -50,14 +55,4 @@
 
 <!-- Views -->
 
-<div class="clients">
-  <div class="client" *ngFor="let client of data.clients">
-      <h1>{{client.name}}</h1>
-      <button>New Task</button>
-      <div class="tasks" *ngFor="let task of data.tasks">
-        <div *ngIf="task.clientId === client.id">
-        <p>- {{ task.title }}</p>
-        </div>
-      </div>
-  </div>
-</div>
+<pre>{{ data | json }}</pre>
