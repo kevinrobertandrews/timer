@@ -1,0 +1,28 @@
+{
+  "data": {
+    "clients": [
+      {
+        "id": 1,
+        "name": "KevinRobertAndrews"
+      },
+      {
+        "id": 2,
+        "name": "LSWorks"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Do a thing",
+        "clientId": 1
+      },
+      {
+        "title": "Do another thing",
+        "clientId": 1
+      },
+      {
+        "title": "Do something else",
+        "clientId": 2
+      }
+    ]
+  }
+}
