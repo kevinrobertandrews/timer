@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { StorageKey, StorageService } from '../../core/storage';
-import { TasksKeys } from './tasks.keys';
 import { BehaviorSubject } from 'rxjs';
 import { Task } from './Task.model';
 
@@ -25,7 +24,7 @@ export class TaskService {
     };
 
     this._state.value.push(task);
-    this._storage.save(TasksKeys.Tasks, this._state.value);
+    this._storage.save(StorageKey.Tasks, this._state.value);
   }
 
   clear() {
