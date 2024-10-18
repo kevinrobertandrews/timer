@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskService } from './task.service';
 import { Task } from './task.model';
-import { map, takeLast, tap } from 'rxjs';
 
 @Component({
   selector: 'tasks-container',
