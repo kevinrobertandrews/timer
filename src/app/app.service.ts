@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export type Client = {
   name: string;
@@ -7,10 +7,6 @@ export type Client = {
 
 export type State = {
   clients: Client[];
-}
-
-const clientContainer = {
-
 }
 
 @Injectable({
