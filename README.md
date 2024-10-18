@@ -15,3 +15,7 @@ TODO:
 - Also, figure out how to properly model state. Right now we have each feature being able to hold a list of items that represent that feature. We've lost one of the early goals of this project to keep a single, large, ApplicationState object. I'm not sure how we'll hook that up, but I believe it could lead to far less coupling than what we're used to working with.
 
 - Find a good way to strongly type your state service.
+
+- Implements a Clients feature
+
+- Create a Bash script that can generate a feature folder real quick-like.

@@ -1,18 +1,24 @@
 <h1>Tasks</h1>
 
-<kra-clock></kra-clock>
+<div class="input">
+  <kra-input
+    [placeholder]="'Enter task...'"
+    (onSubmit)="handleSubmit($event)"
+  ></kra-input>
+</div>
 
-<kra-input
-  [placeholder]="'Enter task...'"
-  (onSubmit)="handleSubmit($event)"
-></kra-input>
-
-<button (click)="clear()">Clear</button>
+<div class="buttons">
+  <kra-button
+    (click)="clear()"
+    [label]="'Clear'"
+    [disabled]="isEmpty"
+  ></kra-button>
+</div>
 
 <div class="tasks">
   <div class="task" *ngFor="let item of (state | async)">
     <span>{{ item.date | date:"HH:mm" }}</span>
     <span>{{item.title}}</span>
-    <button (click)="remove(item)">X</button>
+    <kra-icon-button [icon]="'X'" (click)="remove(item)"></kra-icon-button>
   </div>
 </div>

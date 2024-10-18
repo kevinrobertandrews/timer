@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskService } from './task.service';
-import { Task } from './Task.model';
+import { Task } from './task.model';
 import { map, takeLast, tap } from 'rxjs';
 
 @Component({
@@ -13,6 +13,10 @@ export class TasksContainer {
 
   get state() {
     return this._tasks.state;
+  }
+
+  get isEmpty(): boolean {
+    return this._tasks.isEmpty();
   }
 
   handleSubmit(value: any) {
