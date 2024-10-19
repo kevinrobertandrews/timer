@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TaskService } from '../../features/tasks/task.service';
 
 @Component({
   selector: 'kra-button',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label = 'Click Me!';
-  @Input() disabled: boolean = true;
+  @Input() disabled: boolean = false;
 }

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TimeService {
-  private _date = new Subject();
+  now = new BehaviorSubject(new Date());
 
-  public get now() {
-    this._date.next(new Date());
-    return this._date.asObservable();
+  constructor() {
+    setInterval(() => {
+      this.now.next(new Date());
+    }, 1000);
   }
 }

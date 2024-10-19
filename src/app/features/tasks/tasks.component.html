@@ -1,5 +1,3 @@
-<pre>{{ tasks | json }}</pre>
-
 <h1>Tasks</h1>
 
 <div class="input">
@@ -12,29 +10,24 @@
 <div class="buttons">
   <kra-button
     (click)="clear()"
-    (click)="this.clear()"
     [label]="'Clear'"
+    [disabled]="!!(isEmpty | async)"
   ></kra-button>
 </div>
-
-<!-- someday maybe -->
-<!-- <div class="count">
-  <p>3 tasks</p>
-</div> -->
 
 <div class="tasks">
   <div
     class="task"
-    *ngFor="let task of tasks"
+    *ngFor="let task of tasks | async"
     @fadeSlide
     (click)="remove(task)"
   >
     <div class="content">
-      <p>hello</p>
-      <!-- <span>{{ time }}</span>
-      <span>{{ time | date }}</span>
-      <span>{{ time | date:"HH:mm:ss" }}</span>
-      <span>{{ task.title }}</span> -->
+      <div class="clock">
+        <span class="created">{{ task.created | date : "HH:mm" }} </span>
+        <span class="time">{{ task.time | async | date : "mm:ss" }}</span>
+      </div>
+      <div class="title">{{ task.title }}</div>
     </div>
   </div>
 </div>

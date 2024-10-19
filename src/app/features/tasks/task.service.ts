@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { StoreService } from '../../core/store/store.service';
-import { Subscription } from 'rxjs';
+import { Task } from './task.model';
+
+export interface TaskFeatures {
+  addTask(task: Task): void;
+  clearTasks(): void;
+  removeTask(task: Task): void;
+}
 
 @Injectable()
-export class TaskService {
-  sub: Subscription;
-  data: any;
+export class TaskService implements TaskFeatures {
+  constructor(private _store: StoreService) {}
 
-  constructor(private _store: StoreService) {
-    this.sub = this._store.state.subscribe((data) => (this.data = [data]));
+  public addTask(task: Task) {
+    this._store.addTask(task);
   }
 
-  get tasks() {
-    console.log('getting tasks from task service');
-    console.log({ wut: this.data });
-    return ['task 1', 'task 2'];
+  public clearTasks() {
+    this._store.clearTasks();
+  }
 
-    return this.data;
+  public removeTask(task: Task) {
+    this._store.removeTask(task);
   }
 }

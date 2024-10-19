@@ -5,3 +5,11 @@ export class FeatureNotImplementedError extends Error {
     this.stack = undefined;
   }
 }
+
+export class NeedsWorkError extends Error {
+  constructor(message: string) {
+    super(`🛠️ ${message}`);
+    this.name = 'NeedsWorkError';
+    this.stack = undefined;
+  }
+}
