@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { TasksModule } from './tasks/tasks.module';
 import { ClockModule } from './clock/clock.module';
-import { SharedModule } from '../shared/shared.module';
 
-const modules = [TasksModule, ClockModule, SharedModule];
+const modules = [TasksModule, ClockModule];
 
 @NgModule({
   imports: modules,

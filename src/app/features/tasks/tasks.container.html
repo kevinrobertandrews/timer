@@ -22,8 +22,16 @@
 </div> -->
 
 <div class="tasks">
-  <div class="task" *ngFor="let item of (state | async)">
-    <span>{{item.title}}</span>
-    <kra-icon-button [icon]="'X'" (click)="remove(item)"></kra-icon-button>
+  <div
+    class="task"
+    *ngFor="let task of (state | async)"
+    @fade
+    @fromLeft
+    (click)="remove(task)"
+  >
+    <div class="content">
+      <span>{{task.date | date:"HH:mm" }}</span>
+      <span>{{task.title}}</span>
+    </div>
   </div>
 </div>
