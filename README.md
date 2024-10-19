@@ -27,3 +27,28 @@ TODO:
 - Implements a Clients feature
 
 - Create a Bash script that can generate a feature folder real quick-like.
+
+- Tasks Commands:
+  - Create task
+  - Remove task
+  - Commit task // todo
+
+I am trying to implement a stopwatch count when a task is made
+
+We have a way of knowing what the time is every second, so lets implement that in one place, but make it OBSERVABLE to other parts of the codebase.
+
+
+core
+--error - not implemented
+--logger - basic logger
+--repository - connects to persistence layer
+--store - in memory state
+--time - wraps time in an observable  #experimental
+
+features
+--tasks - create quick, useful tasks
+--clock - see the time in a nicely formatted string
+
+shared
+--input
+--button

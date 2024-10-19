@@ -1,32 +1,10 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { StorageKey } from '.';
 
-interface Store {
-  save(value: any): any;
-  load(): any;
-}
-
-class LocalStorage implements Store {
-  save(value: any) {
-    window.localStorage.setItem('data', value);
-  }
-
-  load() {
-    window.localStorage.getItem('data');
-  }
-}
-
-class DBStorage implements Store {
-  save() {}
-  load() {}
-}
-
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
-  store: Store = new LocalStorage();
-
   constructor() {}
 
   test() {
