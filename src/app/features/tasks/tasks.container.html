@@ -16,9 +16,13 @@
   ></kra-button>
 </div>
 
+<!-- someday maybe -->
+<!-- <div class="count">
+  <p>3 tasks</p>
+</div> -->
+
 <div class="tasks">
   <div class="task" *ngFor="let item of (state | async)">
-    <span>{{ item.date | date:"HH:mm" }}</span>
     <span>{{item.title}}</span>
     <kra-icon-button [icon]="'X'" (click)="remove(item)"></kra-icon-button>
   </div>

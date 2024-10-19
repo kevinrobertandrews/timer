@@ -1,20 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import { TasksModule } from './features/tasks/tasks.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { ComponentsModule } from './components/components.module';
+import { FeaturesModule } from './features/features.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    RouterOutlet,
-    BrowserModule,
-    ReactiveFormsModule,
-    TasksModule,
-    ComponentsModule,
-  ],
+  imports: [RouterOutlet, BrowserModule, CoreModule, FeaturesModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

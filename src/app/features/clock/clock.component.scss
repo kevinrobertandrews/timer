@@ -1,4 +1,7 @@
 :host {
   display: block;
   font-size: 1.4rem;
+
+  cursor: pointer;
+  user-select: none;
 }

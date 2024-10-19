@@ -4,6 +4,14 @@ A prototype app for figuring out how to track my time.
 
 State is handle through services and BehaviorSubjects
 
+FEATURES
+
+Clock 
+  - Shows a very useful time and day messages
+  - Guests can copy the time and day message literal
+  - Users can copy an actual Date object
+  - Pro can provide a string that is compatible with Angular's Date Pipe to transform the time and day message
+
 TODO:
 - Write tests
   - Input clears on submit
